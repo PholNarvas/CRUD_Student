@@ -1,0 +1,47 @@
+﻿@model Student
+
+<form asp-controller="Student" asp-action="Create" method="post">
+
+	<div class="form-group">
+		<label>First Name</label>
+		<input asp-for="FName" class="form-control"/>
+		<span asp-validation-for="FName" class="text-danger"></span>
+	</div>
+
+	<div class="form-group ">
+		<label>Middle Name</label>
+		<input asp-for="MName" class="form-control"/>
+	</div>
+
+	<div class="form-group ">
+		<label>Last Name</label>
+		<input asp-for="LName" class="form-control" />
+		<span asp-validation-for="LName" class="text-danger"></span>
+	</div>
+
+	<div class="form-group ">
+		<label asp-for="DepartmentID" class="control-label"> Department Name </label>
+		<select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.Departments">
+			<option value="">--SELECT DEPARTMENT--</option>
+		</select>
+		<span asp-validation-for="DepartmentID" class="text-danger"></span>
+
+	</div>
+
+	<div class="form-group ">
+		<label asp-for="ClassID" class="control-label">Section Name</label>
+		<select asp-for="ClassID" class="form-control" asp-items="ViewBag.Classes">
+			<option value="">--SELECT SECTION--</option>
+		</select>
+
+		<span asp-validation-for="ClassID" class="text-danger"></span>
+	</div>
+
+	<div class="form-group ">
+		<label>Email</label>
+		<input asp-for="Email" class="form-control"/>
+		<span asp-validation-for="Email" class="text-danger"></span>
+	</div>
+
+	<button class="btn btn-primary mt-2" type="submit">Create</button>
+</form>
